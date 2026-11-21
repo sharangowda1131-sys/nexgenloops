@@ -1,2 +1,188 @@
 # nexgenloops
 for stusents
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightPath Academy | Online Classes</title>
+<style>
+:root{--navy:#142b52;--blue:#2864c5;--sky:#eaf2ff;--gold:#f5c928;--ink:#17243a;--muted:#68778e;--line:#e4eaf2;--bg:#f6f8fc;--white:#fff;--green:#16845b;--shadow:0 12px 35px rgba(24,48,84,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button,a{cursor:pointer}a{text-decoration:none;color:inherit}
+.top{background:var(--navy);color:#eaf1ff;padding:8px 5%;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{height:76px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.navwrap{height:100%;max-width:1200px;margin:auto;padding:0 24px;display:flex;align-items:center;gap:28px}
+.logo{font-weight:900;font-size:21px;letter-spacing:-.7px;color:var(--navy);white-space:nowrap}.logo b{color:var(--blue)}.logo small{display:block;font-size:9px;letter-spacing:2px;color:#8390a3;font-weight:800;margin-top:-4px}
+nav{display:flex;gap:5px;align-items:center;flex:1}nav button{border:0;background:transparent;color:#53627a;font-weight:700;padding:10px 11px;border-radius:9px;font-size:13px}nav button:hover,nav button.active{background:var(--sky);color:var(--blue)}
+.navright{display:flex;gap:9px;align-items:center}.btn{border:0;border-radius:10px;background:var(--blue);color:#fff;padding:11px 16px;font-weight:800;box-shadow:0 5px 12px #2864c52a}.btn:hover{filter:brightness(.96);transform:translateY(-1px)}.btn.gold{background:var(--gold);color:#17243a;box-shadow:none}.btn.light{background:#edf3ff;color:var(--blue);box-shadow:none}.btn.outline{background:white;border:1px solid var(--line);color:var(--navy);box-shadow:none}
+.menu{display:none;background:white;border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:20px}
+main{max-width:1200px;margin:auto;padding:28px 24px 70px;min-height:75vh}.page{display:none}.page.active{display:block;animation:fade .2s ease}@keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+.hero{background:linear-gradient(120deg,#142b52,#2864c5);color:white;border-radius:24px;padding:58px 54px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:340px;height:340px;border:60px solid #ffffff12;border-radius:50%;right:-90px;top:-160px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:30px;background:#ffffff18;border:1px solid #ffffff30;color:#ffe36b;font-weight:800;font-size:12px;letter-spacing:.5px}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.04;letter-spacing:-2px;margin:18px 0}h1 span{color:#ffdc48}.hero p{color:#dce8ff;max-width:570px;font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.hero .btn.outline{background:#ffffff12;border-color:#ffffff65;color:white}
+.heroart{position:relative;z-index:1;background:#fff;color:var(--navy);padding:26px;border-radius:20px;box-shadow:0 18px 45px #061a3e55;transform:rotate(1deg)}.heroart .grade{font-size:46px;font-weight:950;line-height:1.05}.heroart h3{margin:12px 0 4px;font-size:20px}.heroart p{color:var(--muted);font-size:13px;margin:0}.heroart .mini{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}.mini div{background:#f1f5fc;border-radius:10px;padding:10px;font-weight:750;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat,.card,.panel{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:18px}.stat strong{display:block;color:var(--navy);font-size:25px}.stat span{color:var(--muted);font-size:12px;font-weight:700}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:34px 0 17px}.sectionhead h2{margin:0;color:var(--navy);font-size:26px;letter-spacing:-.7px}.sectionhead p{margin:4px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{padding:20px;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 16px 35px #19385c15}.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#edf3ff;font-size:23px;margin-bottom:13px}.card h3{margin:0 0 7px;color:var(--navy);font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px}.card ul{padding-left:18px;color:#526178;font-size:13px;margin:12px 0 0}
+.heading{margin:8px 0 24px}.heading h1{font-size:36px;color:var(--navy);margin:0 0 6px;letter-spacing:-1px}.heading p{color:var(--muted);margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.panel{padding:23px}.panel h3{color:var(--navy);margin:0 0 14px}.muted{color:var(--muted)}.tag{display:inline-block;background:#edf3ff;color:#2864c5;border-radius:20px;padding:4px 9px;font-size:11px;font-weight:800}.tag.green{background:#e7f7ef;color:#16845b}.tag.gold{background:#fff7d9;color:#886800}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800;color:#53627a}.field input,.field select,.field textarea{width:100%;border:1px solid #dce4ef;border-radius:9px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#6d9ce9;box-shadow:0 0 0 3px #2864c51a}.field textarea{min-height:90px;resize:vertical}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.tabs button{border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:9px;font-weight:750;color:#5c6b82}.tabs button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.rowitem{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.rowitem:last-child{border:0}.rowitem strong{display:block;color:var(--navy)}.rowitem small{color:var(--muted)}
+.notice{padding:13px 15px;border-radius:11px;background:#fff8dd;border:1px solid #f5e6a6;color:#695400;font-size:13px;margin:15px 0}
+.empty{padding:30px;text-align:center;color:var(--muted);background:#f7f9fd;border-radius:12px;border:1px dashed #d8e1ed}
+footer{background:#102447;color:#d7e3f6;padding:28px 5%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:13px}
+.toast{position:fixed;bottom:20px;right:20px;background:#132b52;color:white;padding:13px 18px;border-radius:10px;box-shadow:var(--shadow);display:none;z-index:50}.toast.show{display:block}
+@media(max-width:1000px){.navwrap{gap:12px}nav button{padding:9px 7px;font-size:12px}.grid{grid-template-columns:repeat(2,1fr)}.hero{padding:40px 32px}}
+@media(max-width:760px){header{height:auto;min-height:68px}.navwrap{min-height:68px;flex-wrap:wrap;padding:0 16px}.menu{display:block;margin-left:auto}.navright{display:none}nav{display:none;flex-basis:100%;padding:0 0 12px;flex-direction:column;align-items:stretch}nav.open{display:flex}nav button{text-align:left;font-size:14px;padding:11px}.hero{grid-template-columns:1fr;padding:32px 23px}.heroart{max-width:420px}.stats{grid-template-columns:1fr 1fr}.two,.three{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}main{padding:20px 15px 50px}.heading h1{font-size:30px}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:13px}.hero h1{font-size:39px}}
+</style>
+</head>
+<body>
+<div class="top"><span>✦ Online tuition for Classes 11th &amp; 12th</span><span>Call / WhatsApp: 7204730125 · 9663721728</span></div>
+<header><div class="navwrap">
+ <a class="logo" href="#" onclick="showPage('home');return false">Bright<b>Path</b><small>ONLINE ACADEMY</small></a>
+ <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Toggle navigation">☰</button>
+ <nav id="nav">
+  <button data-page="home" class="active">Home</button><button data-page="courses">Courses</button><button data-page="register">Register / Login</button><button data-page="dashboard">Dashboard</button><button data-page="live">Live Classes</button><button data-page="materials">Materials</button><button data-page="tests">Online Tests</button><button data-page="contact">Contact</button><button data-page="admin">Admin</button>
+ </nav>
+ <div class="navright"><button class="btn light" onclick="showPage('register')">Student login</button><button class="btn gold" onclick="showPage('contact')">Enquire now</button></div>
+</div></header>
+<main>
+<section id="home" class="page active">
+ <div class="hero"><div><span class="pill">✦ DAILY ONLINE CLASSES</span><h1>Learn Today.<br><span>Build Tomorrow.</span></h1><p>Build strong concepts and prepare confidently for your 11th and 12th exams with guided online tuition, regular practice and doubt-solving support.</p><div class="actions"><button class="btn gold" onclick="showPage('courses')">Explore courses →</button><button class="btn outline" onclick="showPage('register')">Join as a student</button></div></div>
+ <div class="heroart"><div class="grade">11th <span style="color:#f0c522">&amp;</span><br>12th</div><h3>Your learning journey starts here</h3><p>Structured support for school learning and exam preparation.</p><div class="mini"><div>📹 Live online classes</div><div>📚 Notes &amp; PDFs</div><div>📝 Practice tests</div><div>🙋 Doubt solving</div></div></div></div>
+ <div class="stats"><div class="stat"><strong>04</strong><span>SUBJECT AREAS</span></div><div class="stat"><strong>Daily</strong><span>LEARNING SUPPORT</span></div><div class="stat"><strong>11th–12th</strong><span>GRADE LEVELS</span></div><div class="stat"><strong>Online</strong><span>LEARN FROM ANYWHERE</span></div></div>
+ <div class="sectionhead"><div><h2>Explore our subjects</h2><p>Clear explanations. Confident preparation.</p></div><button class="btn light" onclick="showPage('courses')">View all courses</button></div>
+ <div class="grid">
+  <div class="card"><div class="icon">📐</div><h3>Mathematics</h3><p>Concept clarity, step-by-step solutions and regular practice.</p></div>
+  <div class="card"><div class="icon">📝</div><h3>KCET Preparation</h3><p>Exam-oriented topics, practice questions and mock tests.</p></div>
+  <div class="card"><div class="icon">📊</div><h3>Business Studies</h3><p>Easy explanations, key points and diagrams.</p></div>
+  <div class="card"><div class="icon">🧮</div><h3>Accountancy</h3><p>Practical concepts and stepwise problem solving.</p></div>
+ </div>
+ <div class="sectionhead"><div><h2>A better way to learn</h2><p>Everything students need for a consistent study routine.</p></div></div>
+ <div class="grid">
+  <div class="card"><div class="icon">👩‍🏫</div><h3>Dedicated teaching</h3><p>Guidance from experienced and dedicated faculty.</p></div>
+  <div class="card"><div class="icon">💻</div><h3>Live online classes</h3><p>Attend classes remotely at the scheduled time.</p></div>
+  <div class="card"><div class="icon">📒</div><h3>Study materials</h3><p>Notes and resources to support revision.</p></div>
+  <div class="card"><div class="icon">🎯</div><h3>Tests &amp; revision</h3><p>Regular practice and doubt-solving support.</p></div>
+ </div>
+</section>
+
+<section id="courses" class="page">
+ <div class="heading"><span class="tag">LEARNING PROGRAMS</span><h1>Explore our courses</h1><p>Choose a subject to see its learning focus and enquire about enrolment.</p></div>
+ <div class="grid">
+  <div class="card"><div class="icon">📐</div><span class="tag">11th &amp; 12th</span><h3>Mathematics</h3><p>Strengthen fundamentals and develop problem-solving confidence.</p><ul><li>Concept clarity</li><li>Step-by-step solutions</li><li>Regular practice and tests</li></ul><button class="btn light" style="margin-top:15px" onclick="enquireSubject('Mathematics')">Enquire about course</button></div>
+  <div class="card"><div class="icon">📝</div><span class="tag">Entrance exam</span><h3>KCET Preparation</h3><p>Prepare with an exam-oriented approach and focused revision.</p><ul><li>Important topics and tricks</li><li>Practice questions</li><li>Mock tests and revision</li></ul><button class="btn light" style="margin-top:15px" onclick="enquireSubject('KCET Preparation')">Enquire about course</button></div>
+  <div class="card"><div class="icon">📊</div><span class="tag">Commerce</span><h3>Business Studies</h3><p>Understand business concepts with simple explanations.</p><ul><li>Easy understanding</li><li>Key points and diagrams</li><li>Exam-focused preparation</li></ul><button class="btn light" style="margin-top:15px" onclick="enquireSubject('Business Studies')">Enquire about course</button></div>
+  <div class="card"><div class="icon">🧮</div><span class="tag">Commerce</span><h3>Accountancy</h3><p>Build confidence in accounting concepts and practical problems.</p><ul><li>Concepts with practicals</li><li>Stepwise problem solving</li><li>Board exam focus</li></ul><button class="btn light" style="margin-top:15px" onclick="enquireSubject('Accountancy')">Enquire about course</button></div>
+ </div>
+ <div class="notice">Course fees, detailed syllabus, batch timings and availability are shared by the academy. Please contact us for current details.</div>
+</section>
+
+<section id="register" class="page">
+ <div class="heading"><span class="tag">STUDENT ACCESS</span><h1>Student registration &amp; login</h1><p>Create a demo student profile or open the sample dashboard.</p></div>
+ <div class="two">
+  <div class="panel"><h3>Create student profile</h3><form id="signup" class="formgrid">
+   <div class="field full"><label>Full name</label><input id="regname" required placeholder="Enter student name"></div>
+   <div class="field"><label>Email address</label><input id="regemail" type="email" required placeholder="name@example.com"></div>
+   <div class="field"><label>Mobile number</label><input id="regmobile" type="tel" required placeholder="Your phone number"></div>
+   <div class="field"><label>Class</label><select id="regclass" required><option value="">Select class</option><option>11th</option><option>12th</option></select></div>
+   <div class="field"><label>Interested subject</label><select id="regsubject" required><option value="">Select subject</option><option>Mathematics</option><option>KCET Preparation</option><option>Business Studies</option><option>Accountancy</option><option>Multiple subjects</option></select></div>
+   <div class="field full"><button class="btn" type="submit">Create demo profile</button></div>
+  </form><p class="muted" style="font-size:12px">Demo only: this prototype keeps the profile in this browser. It does not create a secure account.</p></div>
+  <div class="panel"><h3>Already registered?</h3><p class="muted">Open the student dashboard using the profile saved in this browser, or preview it with sample student details.</p><div class="notice">For a live production website, student login needs a secure backend, password hashing and account verification.</div><button class="btn" onclick="openDashboard()">Continue to dashboard →</button><button class="btn light" style="margin-left:7px" onclick="sampleProfile()">Use sample student</button><div id="profileSummary" class="muted" style="margin-top:18px;font-size:13px"></div></div>
+ </div>
+</section>
+
+<section id="dashboard" class="page">
+ <div class="heading"><span class="tag green">STUDENT SPACE</span><h1 id="dashWelcome">Welcome to your dashboard</h1><p>Your learning overview and quick links.</p></div>
+ <div class="stats"><div class="stat"><strong id="dashClass">12th</strong><span>YOUR CLASS</span></div><div class="stat"><strong id="dashSubject">4</strong><span>SUBJECT OPTIONS</span></div><div class="stat"><strong>Weekly</strong><span>LEARNING PLAN</span></div><div class="stat"><strong>Active</strong><span>PROFILE STATUS</span></div></div>
+ <div class="two">
+  <div class="panel"><h3>Your learning area</h3><div class="rowitem"><div><strong>Live classes</strong><small>Check upcoming class schedule</small></div><button class="btn light" onclick="showPage('live')">Open</button></div><div class="rowitem"><div><strong>Study materials</strong><small>Browse notes and resources</small></div><button class="btn light" onclick="showPage('materials')">Open</button></div><div class="rowitem"><div><strong>Online tests</strong><small>Practise sample questions</small></div><button class="btn light" onclick="showPage('tests')">Open</button></div></div>
+  <div class="panel"><h3>Student profile</h3><div id="dashProfile" class="muted">No student profile loaded yet. Visit registration to create a demo profile.</div><div class="notice">Your teacher or academy administrator can share your confirmed timetable and class access links.</div></div>
+ </div>
+</section>
+
+<section id="live" class="page">
+ <div class="heading"><span class="tag">ONLINE CLASSROOM</span><h1>Live classes</h1><p>View the class schedule and access the online classroom when your teacher shares a link.</p></div>
+ <div class="notice">No live meeting links or timetable were provided yet. The schedule below is a sample layout, not a confirmed class timetable.</div>
+ <div class="panel"><h3>Sample weekly schedule</h3>
+  <div class="rowitem"><div><strong>Mathematics</strong><small>Monday · Time to be announced · Faculty</small></div><span class="tag gold">Upcoming</span></div>
+  <div class="rowitem"><div><strong>KCET Preparation</strong><small>Tuesday · Time to be announced · Faculty</small></div><span class="tag gold">Upcoming</span></div>
+  <div class="rowitem"><div><strong>Business Studies</strong><small>Wednesday · Time to be announced · Faculty</small></div><span class="tag gold">Upcoming</span></div>
+  <div class="rowitem"><div><strong>Accountancy</strong><small>Thursday · Time to be announced · Faculty</small></div><span class="tag gold">Upcoming</span></div>
+ </div>
+ <div class="panel" style="margin-top:16px"><h3>Join a class</h3><p class="muted">When you receive an official Google Meet, Zoom or other class URL from your teacher, use it here.</p><div class="formgrid"><div class="field full"><label>Class meeting URL</label><input id="meeturl" type="url" placeholder="https://meet.google.com/..."></div><div class="field full"><button class="btn" onclick="joinMeeting()">Open class link</button></div></div></div>
+</section>
+
+<section id="materials" class="page">
+ <div class="heading"><span class="tag">STUDY LIBRARY</span><h1>Study materials</h1><p>Browse the sample resource library. The academy can add its own notes and PDFs.</p></div>
+ <div class="tabs" id="materialTabs"><button class="active" data-filter="All">All subjects</button><button data-filter="Mathematics">Mathematics</button><button data-filter="KCET Preparation">KCET</button><button data-filter="Business Studies">Business Studies</button><button data-filter="Accountancy">Accountancy</button></div>
+ <div id="materialList" class="grid"></div>
+ <div class="notice">These are sample resource entries. No actual notes or PDF files were supplied with the poster. Admin upload requires a connected backend in the production version.</div>
+</section>
+
+<section id="tests" class="page">
+ <div class="heading"><span class="tag">PRACTICE &amp; ASSESSMENT</span><h1>Online tests</h1><p>Try a short sample quiz to see how the student test experience works.</p></div>
+ <div class="two">
+  <div class="panel"><h3>Mathematics · Sample quiz</h3><span class="tag">3 questions</span><div id="quiz">
+   <div class="question" data-answer="4"><p><b>1.</b> What is 2 + 2?</p><label><input type="radio" name="q1" value="3"> 3</label><br><label><input type="radio" name="q1" value="4"> 4</label><br><label><input type="radio" name="q1" value="5"> 5</label></div><hr>
+   <div class="question" data-answer="9"><p><b>2.</b> What is 3 × 3?</p><label><input type="radio" name="q2" value="6"> 6</label><br><label><input type="radio" name="q2" value="9"> 9</label><br><label><input type="radio" name="q2" value="12"> 12</label></div><hr>
+   <div class="question" data-answer="12"><p><b>3.</b> What is 5 + 7?</p><label><input type="radio" name="q3" value="10"> 10</label><br><label><input type="radio" name="q3" value="12"> 12</label><br><label><input type="radio" name="q3" value="14"> 14</label></div>
+   <button class="btn" style="margin-top:18px" onclick="gradeQuiz()">Submit answers</button><p id="quizResult" aria-live="polite"></p>
+  </div></div>
+  <div class="panel"><h3>Your practice plan</h3><div class="rowitem"><div><strong>Chapter practice</strong><small>Revise one topic at a time</small></div><span class="tag">Suggested</span></div><div class="rowitem"><div><strong>Mock test</strong><small>Attempt timed practice papers</small></div><span class="tag">Suggested</span></div><div class="rowitem"><div><strong>Review mistakes</strong><small>Ask your teacher about doubts</small></div><span class="tag">Suggested</span></div><p class="muted" style="font-size:12px">Quiz score is shown in this browser only. It is not saved to a teacher's gradebook.</p></div>
+ </div>
+</section>
+
+<section id="contact" class="page">
+ <div class="heading"><span class="tag">WE'RE HERE TO HELP</span><h1>Contact &amp; admissions</h1><p>Ask about fees, class timings, subjects and enrolment.</p></div>
+ <div class="two">
+  <div class="panel"><h3>Talk to our team</h3><p class="muted">Call or WhatsApp the tuition team for the latest admission details.</p><div class="rowitem"><div><strong>Phone / WhatsApp</strong><small>Primary enquiry number</small></div><a class="btn light" href="tel:7204730125">7204730125</a></div><div class="rowitem"><div><strong>Phone / WhatsApp</strong><small>Additional contact number</small></div><a class="btn light" href="tel:9663721728">9663721728</a></div><div class="notice">Class fees, exact timings, location and teacher profiles have not been supplied. Contact the academy to confirm.</div></div>
+  <div class="panel"><h3>Send an enquiry</h3><form id="contactForm" class="formgrid">
+   <div class="field full"><label>Your name</label><input id="cname" required placeholder="Student or parent name"></div>
+   <div class="field"><label>Mobile number</label><input id="cphone" required type="tel" placeholder="Phone number"></div>
+   <div class="field"><label>Class</label><select id="cclass"><option>11th</option><option>12th</option></select></div>
+   <div class="field full"><label>Subject</label><select id="csubject"><option>Mathematics</option><option>KCET Preparation</option><option>Business Studies</option><option>Accountancy</option><option>Multiple subjects</option></select></div>
+   <div class="field full"><label>Message</label><textarea id="cmessage" placeholder="I would like to know about..."></textarea></div>
+   <div class="field full"><button class="btn" type="submit">Send enquiry on WhatsApp →</button></div>
+  </form></div>
+ </div>
+</section>
+
+<section id="admin" class="page">
+ <div class="heading"><span class="tag gold">MANAGEMENT AREA · DEMO</span><h1>Admin dashboard</h1><p>Preview the administration tools planned for the full platform.</p></div>
+ <div class="notice">This is a front-end demonstration, not a protected administrator account. Do not upload private student data here. Real admin access and uploads need a secure server.</div>
+ <div class="stats"><div class="stat"><strong id="adminStudents">0</strong><span>DEMO PROFILES ON THIS BROWSER</span></div><div class="stat"><strong>04</strong><span>SUBJECT LISTINGS</span></div><div class="stat"><strong>—</strong><span>LIVE CLASSES</span></div><div class="stat"><strong>—</strong><span>TEST RESULTS</span></div></div>
+ <div class="two">
+  <div class="panel"><h3>Manage course information</h3><p class="muted">Course subjects shown on the student website.</p><div class="rowitem"><strong>Mathematics</strong><span class="tag green">Listed</span></div><div class="rowitem"><strong>KCET Preparation</strong><span class="tag green">Listed</span></div><div class="rowitem"><strong>Business Studies</strong><span class="tag green">Listed</span></div><div class="rowitem"><strong>Accountancy</strong><span class="tag green">Listed</span></div></div>
+  <div class="panel"><h3>Resource upload preview</h3><p class="muted">Choose a local file to preview its filename. It will not be uploaded or shared.</p><div class="field"><label>Subject</label><select id="uploadSubject"><option>Mathematics</option><option>KCET Preparation</option><option>Business Studies</option><option>Accountancy</option></select></div><div class="field" style="margin-top:12px"><label>Select PDF or notes file</label><input type="file" id="uploadFile" accept=".pdf,.doc,.docx,.ppt,.pptx"></div><p id="uploadPreview" class="muted" style="font-size:13px"></p></div>
+ </div>
+ <div class="panel" style="margin-top:16px"><h3>Student profile created in this browser</h3><div id="adminProfileList" class="muted">No demo profiles yet.</div></div>
+</section>
+</main>
+<footer><div><b>BrightPath Online Academy</b><br>Learn Today · Build Tomorrow</div><div>Classes 11th &amp; 12th · Online tuition</div><div>7204730125 · 9663721728</div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const pages=['home','courses','register','dashboard','live','materials','tests','contact','admin'];
+function showPage(id){if(!pages.includes(id))id='home';document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('nav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.querySelector('nav').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});if(id==='dashboard')renderProfile();if(id==='admin')renderAdmin();}
+document.querySelectorAll('nav button[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
+function getProfile(){try{return JSON.parse(localStorage.getItem('brightpathProfile')||'null')}catch(e){return null}}
+function saveProfile(p){localStorage.setItem('brightpathProfile',JSON.stringify(p))}
+document.getElementById('signup').addEventListener('submit',e=>{e.preventDefault();const p={name:regname.value.trim(),email:regemail.value.trim(),mobile:regmobile.value.trim(),cls:regclass.value,subject:regsubject.value};saveProfile(p);document.getElementById('profileSummary').innerHTML='<b>Profile created:</b> '+escapeHtml(p.name)+' · '+escapeHtml(p.cls)+' · '+escapeHtml(p.subject);toast('Demo student profile created');showPage('dashboard')});
+function sampleProfile(){saveProfile({name:'Sample Student',email:'student@example.com',mobile:'0000000000',cls:'12th',subject:'Mathematics'});document.getElementById('profileSummary').textContent='Sample student profile loaded.';toast('Sample profile loaded');}
+function openDashboard(){if(!getProfile())sampleProfile();showPage('dashboard')}
+function renderProfile(){const p=getProfile();document.getElementById('dashWelcome').textContent=p?'Welcome, '+p.name:'Welcome to your dashboard';document.getElementById('dashClass').textContent=p?p.cls:'—';document.getElementById('dashSubject').textContent=p?p.subject:'—';document.getElementById('dashProfile').innerHTML=p?'<b>Name:</b> '+escapeHtml(p.name)+'<br><b>Email:</b> '+escapeHtml(p.email)+'<br><b>Mobile:</b> '+escapeHtml(p.mobile)+'<br><b>Class:</b> '+escapeHtml(p.cls)+'<br><b>Subject:</b> '+escapeHtml(p.subject):'No student profile loaded yet. Visit registration to create a demo profile.'}
+function renderAdmin(){const p=getProfile();document.getElementById('adminStudents').textContent=p?'1':'0';document.getElementById('adminProfileList').innerHTML=p?'<div class="rowitem"><div><strong>'+escapeHtml(p.name)+'</strong><small>'+escapeHtml(p.cls)+' · '+escapeHtml(p.subject)+'</small></div><span class="tag">Browser demo</span></div>':'No demo profiles yet.'}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function enquireSubject(s){showPage('contact');document.getElementById('csubject').value=s}
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const msg=`Hello, I would like to enquire about online tuition classes.%0AName: ${encodeURIComponent(cname.value)}%0APhone: ${encodeURIComponent(cphone.value)}%0AClass: ${encodeURIComponent(cclass.value)}%0ASubject: ${encodeURIComponent(csubject.value)}%0AMessage: ${encodeURIComponent(cmessage.value)}`;window.open('https://wa.me/917204730125?text='+msg,'_blank')});
+function joinMeeting(){const u=document.getElementById('meeturl').value.trim();try{const url=new URL(u);if(!['http:','https:'].includes(url.protocol))throw 0;window.open(url.href,'_blank','noopener');}catch(e){toast('Please enter a valid class URL shared by your teacher.')}}
+const resources=[['Mathematics','Chapter notes · Sample entry','📐'],['KCET Preparation','Practice questions · Sample entry','📝'],['Business Studies','Revision outline · Sample entry','📊'],['Accountancy','Worked examples · Sample entry','🧮']];
+function renderMaterials(filter='All'){const list=document.getElementById('materialList');const rows=resources.filter(r=>filter==='All'||r[0]===filter);list.innerHTML=rows.map(r=>`<div class="card"><div class="icon">${r[2]}</div><span class="tag">${r[0]}</span><h3>${r[1]}</h3><p>Sample resource listing. Ask the academy for official notes.</p></div>`).join('')}
+document.querySelectorAll('#materialTabs button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#materialTabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderMaterials(b.dataset.filter)}));renderMaterials();
+function gradeQuiz(){let score=0,answered=0;document.querySelectorAll('.question').forEach((q,i)=>{const selected=q.querySelector('input:checked');if(selected){answered++;if(selected.value===q.dataset.answer)score++}});const el=document.getElementById('quizResult');el.textContent=`You scored ${score} out of 3. Answered: ${answered}/3.`;el.style.fontWeight='800';el.style.color=score===3?'#16845b':'#2864c5'}
+document.getElementById('uploadFile').addEventListener('change',e=>{const f=e.target.files[0];document.getElementById('uploadPreview').textContent=f?`Selected for ${uploadSubject.value}: ${f.name} (${Math.round(f.size/1024)} KB). Not uploaded.`:''});
+</script>
+</body></html>
